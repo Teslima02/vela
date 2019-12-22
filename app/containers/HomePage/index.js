@@ -13,25 +13,21 @@ import { compose } from 'redux';
 import { createStructuredSelector } from 'reselect';
 
 import {
-  InputBase,
-  Avatar,
-  fade,
   Grid,
-  ListItemIcon,
-  ListItemText,
-  ListItem,
+  Paper,
   Typography,
-  List,
-  Toolbar,
   CssBaseline,
-  AppBar,
   makeStyles,
-  Drawer,
   Card,
   CardContent,
-  CardActions,
   Button,
-  Divider,
+  TableContainer,
+  Table,
+  TableHead,
+  TableRow,
+  TableCell,
+  TableBody,
+  TableFooter,
 } from '@material-ui/core';
 import { useInjectReducer } from 'utils/injectReducer';
 import { useInjectSaga } from 'utils/injectSaga';
@@ -45,6 +41,12 @@ import dateRange from '../../images/dateRange.svg';
 import monthRange from '../../images/monthRange.svg';
 import LeftButton from '../../images/LeftButton.svg';
 import RightButton from '../../images/RightButton.svg';
+import vw from '../../images/vw.svg';
+import Ellipse2 from '../../images/Ellipse2.svg';
+import Ellipse3 from '../../images/Ellipse3.svg';
+import Ellipse4 from '../../images/Ellipse4.svg';
+import ObjectW from '../../images/Object.svg';
+import tableNav from '../../images/tableNav.svg';
 
 const useStyles = makeStyles({
   card: {
@@ -101,6 +103,40 @@ const useStyles = makeStyles({
     height: '19.38px',
     left: '926.15px',
     top: '218px',
+  },
+  tableHeader: {
+    background: '#EAEEF0',
+  },
+  itemType: {
+    marginLeft: '10px',
+  },
+  itemImage: {
+    float: 'left',
+    marginRight: '20px',
+  },
+  reconciledButton: {
+    color: '#27AE60',
+    border: '1px solid #CCCFD4',
+    boxSizing: 'border-box',
+    borderRadius: '30px',
+    marginRight: '20px',
+  },
+  pendingButton: {
+    color: '#EBC315',
+    border: '1px solid #CCCFD4',
+    boxSizing: 'border-box',
+    borderRadius: '30px',
+    marginRight: '20px',
+  },
+  unreconciledButton: {
+    color: '#7F8FA4',
+    border: '1px solid #CCCFD4',
+    boxSizing: 'border-box',
+    borderRadius: '30px',
+    marginRight: '20px',
+  },
+  dot: {
+    marginRight: '2px',
   },
 });
 
@@ -232,6 +268,234 @@ export function HomePage() {
           </div>
         </Grid>
       </Grid>
+
+      <Typography variant="body2" component="p">
+        <b>Payments</b>
+      </Typography>
+      <div>
+        <Typography variant="body2" component="p">
+          Showing
+        </Typography>
+
+        <TableContainer component={Paper}>
+          <Table aria-label="simple table">
+            <TableHead className={classes.tableHeader}>
+              <TableRow>
+                <TableCell>Item Type</TableCell>
+                <TableCell>Price</TableCell>
+                <TableCell>Transaction No</TableCell>
+                <TableCell>Time</TableCell>
+                <TableCell> </TableCell>
+              </TableRow>
+            </TableHead>
+            <TableBody>
+              <TableRow>
+                <TableCell component="th" scope="row">
+                  <img alt="" src={vw} className={classes.itemImage} />
+                  <Typography
+                    variant="body2"
+                    component="p"
+                    className={classes.itemType}
+                  >
+                    Apple Mac Book 15* 250 SSD 12B
+                  </Typography>
+                </TableCell>
+                <TableCell>$73430</TableCell>
+                <TableCell>1234567890</TableCell>
+                <TableCell>12:30</TableCell>
+                <TableCell>
+                  <Button variant="outlined" className={classes.reconciledButton}>
+                    <img alt="" src={Ellipse2} className={classes.dot} />
+                    Reconciled
+                  </Button>
+                  <img alt="" src={ObjectW} />
+                </TableCell>
+              </TableRow>
+              <TableRow>
+                <TableCell component="th" scope="row">
+                  <img alt="" src={vw} className={classes.pendingButton} />
+                  <Typography
+                    variant="body2"
+                    component="p"
+                    className={classes.itemType}
+                  >
+                    Apple Mac Book 15* 250 SSD 12B
+                  </Typography>
+                </TableCell>
+                <TableCell>$73430</TableCell>
+                <TableCell>1234567890</TableCell>
+                <TableCell>12:30</TableCell>
+                <TableCell>
+                  <Button variant="outlined" className={classes.pendingButton}>
+                    <img alt="" src={Ellipse3} className={classes.dot} />
+                    Reconciled
+                  </Button>
+                  <img alt="" src={ObjectW} />
+                </TableCell>
+              </TableRow>
+              <TableRow>
+                <TableCell component="th" scope="row">
+                  <img alt="" src={vw} className={classes.itemImage} />
+                  <Typography
+                    variant="body2"
+                    component="p"
+                    className={classes.itemType}
+                  >
+                    Apple Mac Book 15* 250 SSD 12B
+                  </Typography>
+                </TableCell>
+                <TableCell>$73430</TableCell>
+                <TableCell>1234567890</TableCell>
+                <TableCell>12:30</TableCell>
+                <TableCell>
+                  <Button variant="outlined" className={classes.reconciledButton}>
+                    <img alt="" src={Ellipse2} className={classes.dot} />
+                    Reconciled
+                  </Button>
+                  <img alt="" src={ObjectW} />
+                </TableCell>
+              </TableRow>
+              <TableRow>
+                <TableCell component="th" scope="row">
+                  <img alt="" src={vw} className={classes.itemImage} />
+                  <Typography
+                    variant="body2"
+                    component="p"
+                    className={classes.itemType}
+                  >
+                    Apple Mac Book 15* 250 SSD 12B
+                  </Typography>
+                </TableCell>
+                <TableCell>$73430</TableCell>
+                <TableCell>1234567890</TableCell>
+                <TableCell>12:30</TableCell>
+                <TableCell>
+                  <Button variant="outlined" className={classes.reconciledButton}>
+                    <img alt="" src={Ellipse2} className={classes.dot} />
+                    Reconciled
+                  </Button>
+                  <img alt="" src={ObjectW} />
+                </TableCell>
+              </TableRow>
+              <TableRow>
+                <TableCell component="th" scope="row">
+                  <img alt="" src={vw} className={classes.itemImage} />
+                  <Typography
+                    variant="body2"
+                    component="p"
+                    className={classes.itemType}
+                  >
+                    Apple Mac Book 15* 250 SSD 12B
+                  </Typography>
+                </TableCell>
+                <TableCell>$73430</TableCell>
+                <TableCell>1234567890</TableCell>
+                <TableCell>12:30</TableCell>
+                <TableCell>
+                  <Button variant="outlined" className={classes.pendingButton}>
+                    <img alt="" src={Ellipse3} className={classes.dot} />
+                    Reconciled
+                  </Button>
+                  <img alt="" src={ObjectW} />
+                </TableCell>
+              </TableRow>
+              <TableRow>
+                <TableCell component="th" scope="row">
+                  <img alt="" src={vw} className={classes.itemImage} />
+                  <Typography
+                    variant="body2"
+                    component="p"
+                    className={classes.itemType}
+                  >
+                    Apple Mac Book 15* 250 SSD 12B
+                  </Typography>
+                </TableCell>
+                <TableCell>$73430</TableCell>
+                <TableCell>1234567890</TableCell>
+                <TableCell>12:30</TableCell>
+                <TableCell>
+                  <Button variant="outlined" className={classes.unreconciledButton}>
+                    <img alt="" src={Ellipse4} className={classes.dot} />
+                    Reconciled
+                  </Button>
+                  <img alt="" src={ObjectW} />
+                </TableCell>
+              </TableRow>
+              <TableRow>
+                <TableCell component="th" scope="row">
+                  <img alt="" src={vw} className={classes.itemImage} />
+                  <Typography
+                    variant="body2"
+                    component="p"
+                    className={classes.itemType}
+                  >
+                    Apple Mac Book 15* 250 SSD 12B
+                  </Typography>
+                </TableCell>
+                <TableCell>$73430</TableCell>
+                <TableCell>1234567890</TableCell>
+                <TableCell>12:30</TableCell>
+                <TableCell>
+                  <Button variant="outlined" className={classes.reconciledButton}>
+                    <img alt="" src={Ellipse2} className={classes.dot} />
+                    Reconciled
+                  </Button>
+                  <img alt="" src={ObjectW} />
+                </TableCell>
+              </TableRow>
+              <TableRow>
+                <TableCell component="th" scope="row">
+                  <img alt="" src={vw} className={classes.itemImage} />
+                  <Typography
+                    variant="body2"
+                    component="p"
+                    className={classes.itemType}
+                  >
+                    Apple Mac Book 15* 250 SSD 12B
+                  </Typography>
+                </TableCell>
+                <TableCell>$73430</TableCell>
+                <TableCell>1234567890</TableCell>
+                <TableCell>12:30</TableCell>
+                <TableCell>
+                  <Button variant="outlined" className={classes.unreconciledButton}>
+                    <img alt="" src={Ellipse4} className={classes.dot} />
+                    Reconciled
+                  </Button>
+                  <img alt="" src={ObjectW} />
+                </TableCell>
+              </TableRow>
+              <TableRow>
+                <TableCell component="th" scope="row">
+                  <img alt="" src={vw} className={classes.itemImage} />
+                  <Typography
+                    variant="body2"
+                    component="p"
+                    className={classes.itemType}
+                  >
+                    Apple Mac Book 15* 250 SSD 12B
+                  </Typography>
+                </TableCell>
+                <TableCell>$73430</TableCell>
+                <TableCell>1234567890</TableCell>
+                <TableCell>12:30</TableCell>
+                <TableCell>
+                  <Button variant="outlined" className={classes.pendingButton}>
+                    <img alt="" src={Ellipse3} className={classes.dot} />
+                    Reconciled
+                  </Button>
+                  <img alt="" src={ObjectW} />
+                </TableCell>
+              </TableRow>
+              <TableFooter>
+                <TableRow>
+                  <img alt="" src={tableNav} />
+                </TableRow>
+              </TableFooter>
+            </TableBody>
+          </Table>
+        </TableContainer>
+      </div>
     </React.Fragment>
   );
 }
