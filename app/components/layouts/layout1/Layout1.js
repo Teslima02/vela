@@ -4,12 +4,10 @@ import {
   InputBase,
   Avatar,
   fade,
-  IconButton,
   Grid,
   ListItemIcon,
   ListItemText,
   ListItem,
-  Divider,
   Typography,
   List,
   Toolbar,
@@ -19,12 +17,19 @@ import {
   Drawer,
 } from '@material-ui/core';
 import SearchIcon from '@material-ui/icons/Search';
-import InboxIcon from '@material-ui/icons/MoveToInbox';
-import MailIcon from '@material-ui/icons/Mail';
 import { withRouter } from 'react-router';
 
 import notification from '../../../images/notification.svg';
 import avatar from '../../../images/avatar.svg';
+import DB from '../../../images/DB.svg';
+import wallet43 from '../../../images/wallet-43.svg';
+import walletM from '../../../images/wallet-m.svg';
+import walletE from '../../../images/wallet-e.svg';
+import setting from '../../../images/setting.svg';
+import order from '../../../images/order.svg';
+import orderM from '../../../images/order-m.svg';
+import orderE from '../../../images/order-e.svg';
+import profile from '../../../images/profile.svg';
 
 const drawerWidth = 240;
 
@@ -117,9 +122,24 @@ const useStyles = makeStyles(theme => ({
   avatarFormat: {
     marginRight: theme.spacing(2),
   },
+  nav1: {
+    width: '163px',
+    height: '33px',
+    background: '#27AE60',
+    borderRadius: '30px',
+  },
+  navButton1: {
+    color: '#FFFFFF',
+    display: 'flex',
+    alignItems: 'flex-end',
+    textAlign: 'center',
+    letterSpacing: '0.2px',
+  },
+  nav2Bg: {
+    background: '#EAEEF0',
+  },
 }));
 
-const menuId = 'primary-search-account-menu';
 const Layout1 = props => {
   const classes = useStyles();
 
@@ -172,11 +192,7 @@ const Layout1 = props => {
             >
               Oluwaleke Ojo
             </Typography>
-            <Avatar
-              alt=""
-              src={avatar}
-              className={`${classes.avatarFormat}`}
-            />
+            <Avatar alt="" src={avatar} className={`${classes.avatarFormat}`} />
           </div>
         </Toolbar>
       </AppBar>
@@ -189,25 +205,99 @@ const Layout1 = props => {
       >
         <div className={classes.toolbar} />
         <List>
-          {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-            <ListItem button key={text}>
-              <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-              </ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItem>
-          ))}
+          <ListItem button className={classes.navButton1}>
+            <ListItemText primary="GENERATE INVOICE" className={classes.nav1} />
+          </ListItem>
         </List>
-        <Divider />
+
         <List>
-          {['All mail', 'Trash', 'Spam'].map((text, index) => (
-            <ListItem button key={text}>
-              <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-              </ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItem>
-          ))}
+          <ListItem>
+            <ListItemText primary="Main" />
+          </ListItem>
+        </List>
+        <List>
+          <ListItem button className={classes.nav2Bg}>
+            <ListItemIcon>
+              <img alt="" src={DB} />
+            </ListItemIcon>
+            <ListItemText primary="Overview" />
+          </ListItem>
+        </List>
+
+        <List>
+          <ListItem>
+            <ListItemText primary="Payments" />
+          </ListItem>
+        </List>
+        <List>
+          <ListItem button>
+            <ListItemIcon>
+              <img alt="" src={wallet43} />
+            </ListItemIcon>
+            <ListItemText primary="All Payments" />
+          </ListItem>
+        </List>
+        <List>
+          <ListItem button>
+            <ListItemIcon>
+              <img alt="" src={walletM} />
+            </ListItemIcon>
+            <ListItemText primary="Reconcilled Payments" />
+          </ListItem>
+        </List>
+        <List>
+          <ListItem button>
+            <ListItemIcon>
+              <img alt="" src={walletE} />
+            </ListItemIcon>
+            <ListItemText primary="Un-Reconcilled Payments" />
+          </ListItem>
+        </List>
+        <List>
+          <ListItem button>
+            <ListItemIcon>
+              <img alt="" src={setting} />
+            </ListItemIcon>
+            <ListItemText primary="Manual Settlement" />
+          </ListItem>
+        </List>
+
+        <List>
+          <ListItem>
+            <ListItemText primary="Orders" />
+          </ListItem>
+        </List>
+        <List>
+          <ListItem button>
+            <ListItemIcon>
+              <img alt="" src={order} />
+            </ListItemIcon>
+            <ListItemText primary="All Orders" />
+          </ListItem>
+        </List>
+        <List>
+          <ListItem button>
+            <ListItemIcon>
+              <img alt="" src={orderM} />
+            </ListItemIcon>
+            <ListItemText primary="Pending Orders" />
+          </ListItem>
+        </List>
+        <List>
+          <ListItem button>
+            <ListItemIcon>
+              <img alt="" src={orderE} />
+            </ListItemIcon>
+            <ListItemText primary="Reconcilled Orders" />
+          </ListItem>
+        </List>
+        <List>
+          <ListItem button>
+            <ListItemIcon>
+              <img alt="" src={profile} />
+            </ListItemIcon>
+            <ListItemText primary="Merchant Profile" />
+          </ListItem>
         </List>
       </Drawer>
 
