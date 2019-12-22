@@ -23,3 +23,4 @@ container: is where i kept all dynamic file inside container App folder and Home
     App folder: is the central settings of the application
         index.js: is where all the routing and modules import
     HomePage folder: is the dashboard of the application
+image folder: is where i kept all my assets
