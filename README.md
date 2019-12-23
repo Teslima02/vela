@@ -15,9 +15,12 @@ Visit the site
 http://localhost:5000
 
 Vela folder Structure
-app:       is the source folder of this application
-components: is where i kept all constant file
-    layouts: is where i structure central layout fro the app so child components can extend it
+
+app ---> is the source folder of this application
+
+    components ---> is where i kept all constant file
+
+      layouts: is where i structure central layout fro the app so child components can extend it
         layout1.js: this is the central layout for this application which homepage in container extend
 container: is where i kept all dynamic file inside container App folder and Homepage folder
     App folder: is the central settings of the application
